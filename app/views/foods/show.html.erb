@@ -1,0 +1,15 @@
+
+<h2>
+We found <%= @food_hits %> foods containing <%= @searched_food %>
+</h2>
+<h3>Here are the first <%= @food_data.size %> results...</h3>
+
+<% @food_data.each do |food| %>
+  <div class="food">
+    <p class="upc">UPC Code: <%= food.code %></p>
+    <p class="description">Description: <%= food.description %></p>
+    <p class="brand">Brand: <%= food.brand_owner %></p>
+    <p class="ingredients">Ingredients: <%= food.ingredients %></p>
+    <hr>
+  </div>
+<% end %>

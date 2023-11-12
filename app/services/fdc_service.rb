@@ -1,7 +1,7 @@
 class FdcService
 
   def search(food)
-    get_url("/foods/search?query=#{food}&pageSize=10")
+    get_url("/fdc/v1//foods/search?query=#{food}")
   end
 
   def get_url(url)
@@ -10,8 +10,9 @@ class FdcService
   end
 
   def conn
-    Faraday.new(url: "https://api.nal.usda.gov/fdc/v1/") do |f|
-      f.params['api_key'] = ''
+    Faraday.new(url: "https://api.nal.usda.gov") do |f|
+      f.params['api_key'] = Rails.application.credentials.fdc[:key]
+      f.params['pageSize'] = 10
     end
   end
 

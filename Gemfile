@@ -60,7 +60,7 @@ group :test do
   gem "capybara"
   gem "launchy"
   gem "simplecov"
-  gem "vcr"
+  # gem "vcr"
   gem "webmock"
   gem 'shoulda-matchers', '~> 5.0'
 end
